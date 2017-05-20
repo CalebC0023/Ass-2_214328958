@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -198,12 +199,137 @@
                     <view key="view" contentMode="scaleToFill" id="lFi-UV-DNU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohp-9b-ukw">
+                                <rect key="frame" x="55" y="90" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="Y11-TW-t1a"/>
+                                    <constraint firstAttribute="width" constant="115" id="f7T-Lf-9RC"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="RPJ-Pc-8j4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niQ-62-LpE">
+                                <rect key="frame" x="230" y="90" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="GIA-8Z-Knc"/>
+                                    <constraint firstAttribute="height" constant="115" id="tSu-GH-Dsl"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="6Fy-QO-CoC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZX-W9-Hme">
+                                <rect key="frame" x="55" y="250" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="2xy-Cc-nj8"/>
+                                    <constraint firstAttribute="width" constant="115" id="skl-iF-PKe"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="h5m-Jh-hvV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-7o-tU4">
+                                <rect key="frame" x="230" y="250" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="Ajh-Z7-sj5"/>
+                                    <constraint firstAttribute="height" constant="115" id="XYB-hP-OTo"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="cL8-eq-LEN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qyt-pr-Pd3">
+                                <rect key="frame" x="55" y="400" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="OWm-Dp-2Zv"/>
+                                    <constraint firstAttribute="width" constant="115" id="wu6-RS-Iz9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="fpa-w4-o6y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bup-2v-CsE">
+                                <rect key="frame" x="230" y="400" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="MHu-iE-pXu"/>
+                                    <constraint firstAttribute="height" constant="115" id="ttF-8T-8dO"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="7SV-l3-TEI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-rm-FLB">
+                                <rect key="frame" x="200" y="570" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9kw-DP-IID"/>
+                                    <constraint firstAttribute="width" constant="150" id="DNM-75-FDz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Return to Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="crossDissolve" id="g6x-Uf-dhz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: 0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqT-fO-6eh">
+                                <rect key="frame" x="16" y="555" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1u3-79-60v"/>
+                                    <constraint firstAttribute="width" constant="150" id="uVj-id-IOs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.58691042820729922" green="0.94695510431579322" blue="0.99835759400000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oZX-W9-Hme" firstAttribute="centerX" secondItem="lFi-UV-DNU" secondAttribute="centerX" constant="-70" id="0Dq-49-wTE"/>
+                            <constraint firstItem="Bup-2v-CsE" firstAttribute="top" secondItem="uiX-7o-tU4" secondAttribute="bottom" constant="20" id="6Ct-DB-GMr"/>
+                            <constraint firstItem="Vuf-7g-VKU" firstAttribute="top" secondItem="FVr-rm-FLB" secondAttribute="bottom" id="BEi-bx-fz9"/>
+                            <constraint firstItem="ohp-9b-ukw" firstAttribute="top" secondItem="mH9-dW-0su" secondAttribute="bottom" constant="35" id="BUe-YE-Zjg"/>
+                            <constraint firstItem="Qyt-pr-Pd3" firstAttribute="centerX" secondItem="lFi-UV-DNU" secondAttribute="centerX" constant="-70" id="D32-VY-4ot"/>
+                            <constraint firstItem="uiX-7o-tU4" firstAttribute="centerX" secondItem="lFi-UV-DNU" secondAttribute="centerX" constant="70" id="LsF-S6-HLK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FVr-rm-FLB" secondAttribute="trailing" id="SdM-CP-lBR"/>
+                            <constraint firstItem="ohp-9b-ukw" firstAttribute="centerX" secondItem="lFi-UV-DNU" secondAttribute="centerX" constant="-70" id="UH2-Zn-ioB"/>
+                            <constraint firstItem="oZX-W9-Hme" firstAttribute="top" secondItem="ohp-9b-ukw" secondAttribute="bottom" constant="20" id="b0k-6j-8JA"/>
+                            <constraint firstItem="Qyt-pr-Pd3" firstAttribute="top" secondItem="oZX-W9-Hme" secondAttribute="bottom" constant="20" id="ceW-Qw-MPT"/>
+                            <constraint firstItem="Vuf-7g-VKU" firstAttribute="top" secondItem="bqT-fO-6eh" secondAttribute="bottom" constant="15" id="eqG-WD-zL8"/>
+                            <constraint firstItem="Bup-2v-CsE" firstAttribute="centerX" secondItem="lFi-UV-DNU" secondAttribute="centerX" constant="70" id="iig-59-lR1"/>
+                            <constraint firstItem="uiX-7o-tU4" firstAttribute="top" secondItem="niQ-62-LpE" secondAttribute="bottom" constant="20" id="jyV-qR-9nF"/>
+                            <constraint firstItem="niQ-62-LpE" firstAttribute="centerX" secondItem="lFi-UV-DNU" secondAttribute="centerX" constant="70" id="rCb-Xe-1IE"/>
+                            <constraint firstItem="bqT-fO-6eh" firstAttribute="leading" secondItem="lFi-UV-DNU" secondAttribute="leadingMargin" id="uOl-Xh-WqC"/>
+                            <constraint firstItem="niQ-62-LpE" firstAttribute="top" secondItem="mH9-dW-0su" secondAttribute="bottom" constant="35" id="vGo-Ck-hOj"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="timerLbl" destination="bqT-fO-6eh" id="NQD-d7-VPp"/>
+                        <outletCollection property="gameCards" destination="ohp-9b-ukw" collectionClass="NSMutableArray" id="13n-Sk-eVU"/>
+                        <outletCollection property="gameCards" destination="niQ-62-LpE" collectionClass="NSMutableArray" id="mm7-5R-7Zc"/>
+                        <outletCollection property="gameCards" destination="oZX-W9-Hme" collectionClass="NSMutableArray" id="Mz9-o6-PpR"/>
+                        <outletCollection property="gameCards" destination="uiX-7o-tU4" collectionClass="NSMutableArray" id="u66-Zo-xcl"/>
+                        <outletCollection property="gameCards" destination="Qyt-pr-Pd3" collectionClass="NSMutableArray" id="R3l-B7-ydQ"/>
+                        <outletCollection property="gameCards" destination="Bup-2v-CsE" collectionClass="NSMutableArray" id="haO-G8-p9U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQi-9T-j8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1017" y="904"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="g6x-Uf-dhz"/>
+    </inferredMetricsTieBreakers>
 </document>

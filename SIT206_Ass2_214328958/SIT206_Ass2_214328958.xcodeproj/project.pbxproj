@@ -509,6 +509,7 @@
 				183A3ED91ED06C32000581BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		183A3EDA1ED06C32000581BD /* Build configuration list for PBXNativeTarget "SIT206_Ass2_214328958Tests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +518,7 @@
 				183A3EDC1ED06C32000581BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		183A3EDD1ED06C32000581BD /* Build configuration list for PBXNativeTarget "SIT206_Ass2_214328958UITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +527,7 @@
 				183A3EDF1ED06C32000581BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
