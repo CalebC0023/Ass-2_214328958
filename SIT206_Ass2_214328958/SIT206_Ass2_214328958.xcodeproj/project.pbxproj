@@ -14,6 +14,7 @@
 		183A3EBD1ED06C32000581BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183A3EBB1ED06C32000581BD /* LaunchScreen.storyboard */; };
 		183A3EC81ED06C32000581BD /* SIT206_Ass2_214328958Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3EC71ED06C32000581BD /* SIT206_Ass2_214328958Tests.swift */; };
 		183A3ED31ED06C32000581BD /* SIT206_Ass2_214328958UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3ED21ED06C32000581BD /* SIT206_Ass2_214328958UITests.swift */; };
+		183A3EE11ED0756B000581BD /* EasyGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3EE01ED0756B000581BD /* EasyGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		183A3ECE1ED06C32000581BD /* SIT206_Ass2_214328958UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SIT206_Ass2_214328958UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		183A3ED21ED06C32000581BD /* SIT206_Ass2_214328958UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIT206_Ass2_214328958UITests.swift; sourceTree = "<group>"; };
 		183A3ED41ED06C32000581BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		183A3EE01ED0756B000581BD /* EasyGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				183A3EB21ED06C32000581BD /* AppDelegate.swift */,
 				183A3EB41ED06C32000581BD /* ViewController.swift */,
+				183A3EE01ED0756B000581BD /* EasyGameViewController.swift */,
 				183A3EB61ED06C32000581BD /* Main.storyboard */,
 				183A3EB91ED06C32000581BD /* Assets.xcassets */,
 				183A3EBB1ED06C32000581BD /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183A3EE11ED0756B000581BD /* EasyGameViewController.swift in Sources */,
 				183A3EB51ED06C32000581BD /* ViewController.swift in Sources */,
 				183A3EB31ED06C32000581BD /* AppDelegate.swift in Sources */,
 			);
