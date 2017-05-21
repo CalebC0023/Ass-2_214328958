@@ -44,11 +44,8 @@
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="igL-rA-tDF" kind="modal" modalTransitionStyle="crossDissolve" id="em3-TV-JP0"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-Vw-G3w">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-Vw-G3w">
                                 <rect key="frame" x="100" y="353" width="175" height="50"/>
                                 <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -56,7 +53,7 @@
                                     <constraint firstAttribute="width" constant="175" id="hGG-XA-3Fw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <state key="normal" title="Scoreboard">
+                                <state key="normal" title="Resume Game">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -278,7 +275,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="crossDissolve" id="g6x-Uf-dhz"/>
+                                    <action selector="returnToMenu:" destination="MqD-Em-lDQ" eventType="touchUpInside" id="xfG-mD-I8r"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: 0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqT-fO-6eh">
@@ -315,6 +312,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="returnBtn" destination="FVr-rm-FLB" id="7YN-o8-Dmz"/>
                         <outlet property="timerLbl" destination="bqT-fO-6eh" id="NQD-d7-VPp"/>
                         <outletCollection property="gameCards" destination="ohp-9b-ukw" collectionClass="NSMutableArray" id="13n-Sk-eVU"/>
                         <outletCollection property="gameCards" destination="niQ-62-LpE" collectionClass="NSMutableArray" id="mm7-5R-7Zc"/>
@@ -322,6 +320,7 @@
                         <outletCollection property="gameCards" destination="uiX-7o-tU4" collectionClass="NSMutableArray" id="u66-Zo-xcl"/>
                         <outletCollection property="gameCards" destination="Qyt-pr-Pd3" collectionClass="NSMutableArray" id="R3l-B7-ydQ"/>
                         <outletCollection property="gameCards" destination="Bup-2v-CsE" collectionClass="NSMutableArray" id="haO-G8-p9U"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="easyToMenu" modalTransitionStyle="crossDissolve" id="VQt-7L-jyt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQi-9T-j8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,6 +329,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g6x-Uf-dhz"/>
+        <segue reference="VQt-7L-jyt"/>
     </inferredMetricsTieBreakers>
 </document>

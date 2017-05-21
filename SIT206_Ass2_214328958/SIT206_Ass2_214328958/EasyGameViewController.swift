@@ -12,6 +12,7 @@ class EasyGameViewController: UIViewController {
 
     @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet var gameCards: [UIButton]!
+    @IBOutlet weak var returnBtn: UIButton!
     
     var time = 0.0
     //Timer for the game
@@ -25,17 +26,33 @@ class EasyGameViewController: UIViewController {
     
     //Main game variables
     var first = true
+    var previousGuess = 0
     var imgs = [
         UIImage(named: "0"),
         UIImage(named: "1"),
         UIImage(named: "2")
     ]
     
+    //Stores current card values
+    var currentCards = [Int]()
+    
+    //Stores current found pairs
+    var easyPairs = [
+        false,
+        false,
+        false
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Initial setup
-        startGame()
+        if (!ongoingGame) {
+            //Initial setup
+            startGame()
+        }
+        else {
+            resumeGame()
+        }
         
     }
 
@@ -62,18 +79,69 @@ class EasyGameViewController: UIViewController {
                     card.tag = Int(r)
                     assigned = true
                     tag0 += 1
+                    
+                    //Stores the card's current tag value
+                    currentCards.append(Int(r))
                 }
                 else if(r == 1 && tag1 < 2) {
                     card.tag = Int(r)
                     assigned = true
                     tag1 += 1
+                    
+                    currentCards.append(Int(r))
                 }
                 else if(r == 2 && tag2 < 2) {
                     card.tag = Int(r)
                     assigned = true
                     tag2 += 1
+                    
+                    currentCards.append(Int(r))
                 }
                 
+            }
+            
+        }
+        
+        //Set and start the timer
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
+        
+    }
+    
+    //Resume the saved game
+    func resumeGame() {
+        
+        //The game continues so reset saved game state
+        ongoingGame = false
+        difficulty = 0
+        
+        //Set the saved game values
+        time = resumeTime
+        timerLbl.text = "Time: " + String(time)
+        currentCards = resumeCards
+        easyPairs = resumePairs
+        
+        var i = 0
+        
+        //Reassign the game cards
+        for card in gameCards {
+            card.tag = currentCards[i]
+            i += 1
+            
+            //Set the correct states for each card
+            if (card.tag == 0 && easyPairs[0]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 1 && easyPairs[1]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 2 && easyPairs[2]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
             }
             
         }
@@ -91,15 +159,65 @@ class EasyGameViewController: UIViewController {
     
     //Actions after the game finishes
     func finishGame() {
-        
+        timer.invalidate()
     }
     
     //Main game
     @IBAction func flipCard(_ sender: UIButton) {
         
-        sender.setImage(imgs[sender.tag], for: .normal)
+        //First click
+        if (first) {
+            
+            //Show the assigned image
+            sender.setImage(imgs[sender.tag], for: .normal)
+            sender.backgroundColor = nil
+            //Ensure that the button cannot be currently be clicked
+            sender.isUserInteractionEnabled = false
+            
+            //Set the current flipped card tag
+            previousGuess = sender.tag
+            first = false
+            
+        }
+        //Second click
+        else {
+            
+            //If the second card matches the first
+            if (sender.tag == previousGuess) {
+                
+                //Show assigned image
+                sender.setImage(imgs[sender.tag], for: .normal)
+                sender.backgroundColor = nil
+                //The button can not longer be currently clicked
+                sender.isUserInteractionEnabled = false
+                
+                //Found the pair with the assigned tag
+                easyPairs[sender.tag] = true
+                
+            }
+            //If they don't match
+            else {
+                
+            }
+            
+            first = true
+            
+        }
         
     }
     
+    @IBAction func returnToMenu(_ sender: UIButton) {
+        
+        //Save the current game state
+        ongoingGame = true
+        difficulty = 1
+        resumeTime = time
+        resumeCards = currentCards
+        resumePairs = easyPairs
+        
+        //Return to Menu
+        performSegue(withIdentifier: "easyToMenu", sender: self)
+        
+    }
 
 }

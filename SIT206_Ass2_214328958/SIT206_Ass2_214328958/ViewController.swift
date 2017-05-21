@@ -8,6 +8,13 @@
 
 import UIKit
 
+var ongoingGame = false
+
+var difficulty = 0
+var resumeTime = 0.0
+var resumeCards = [Int]()
+var resumePairs = [Bool]()
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
