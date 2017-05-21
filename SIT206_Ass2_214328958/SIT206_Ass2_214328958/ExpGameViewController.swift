@@ -227,7 +227,7 @@ class ExpGameViewController: UIViewController {
         time = resumeTime
         timerLbl.text = "Time: " + String(time)
         currentCards = resumeCards
-        hardPairs = resumePairs
+        expPairs = resumePairs
         
         var i = 0
         
