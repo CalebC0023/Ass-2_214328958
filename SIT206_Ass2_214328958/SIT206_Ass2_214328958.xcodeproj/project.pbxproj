@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182C40D61ED1B73800960A35 /* MedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C40D51ED1B73800960A35 /* MedGameViewController.swift */; };
+		182C40D81ED1B7A800960A35 /* HardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C40D71ED1B7A800960A35 /* HardGameViewController.swift */; };
+		182C40DA1ED1B7DC00960A35 /* ExpGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C40D91ED1B7DC00960A35 /* ExpGameViewController.swift */; };
 		183A3EB31ED06C32000581BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3EB21ED06C32000581BD /* AppDelegate.swift */; };
 		183A3EB51ED06C32000581BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3EB41ED06C32000581BD /* ViewController.swift */; };
 		183A3EB81ED06C32000581BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183A3EB61ED06C32000581BD /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182C40D51ED1B73800960A35 /* MedGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedGameViewController.swift; sourceTree = "<group>"; };
+		182C40D71ED1B7A800960A35 /* HardGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardGameViewController.swift; sourceTree = "<group>"; };
+		182C40D91ED1B7DC00960A35 /* ExpGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpGameViewController.swift; sourceTree = "<group>"; };
 		183A3EAF1ED06C32000581BD /* SIT206_Ass2_214328958.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIT206_Ass2_214328958.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183A3EB21ED06C32000581BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		183A3EB41ED06C32000581BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				183A3EB21ED06C32000581BD /* AppDelegate.swift */,
 				183A3EB41ED06C32000581BD /* ViewController.swift */,
 				183A3EE01ED0756B000581BD /* EasyGameViewController.swift */,
+				182C40D51ED1B73800960A35 /* MedGameViewController.swift */,
+				182C40D71ED1B7A800960A35 /* HardGameViewController.swift */,
+				182C40D91ED1B7DC00960A35 /* ExpGameViewController.swift */,
 				183A3EB61ED06C32000581BD /* Main.storyboard */,
 				183A3EB91ED06C32000581BD /* Assets.xcassets */,
 				183A3EBB1ED06C32000581BD /* LaunchScreen.storyboard */,
@@ -263,7 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				183A3EE11ED0756B000581BD /* EasyGameViewController.swift in Sources */,
+				182C40D81ED1B7A800960A35 /* HardGameViewController.swift in Sources */,
+				182C40D61ED1B73800960A35 /* MedGameViewController.swift in Sources */,
 				183A3EB51ED06C32000581BD /* ViewController.swift in Sources */,
+				182C40DA1ED1B7DC00960A35 /* ExpGameViewController.swift in Sources */,
 				183A3EB31ED06C32000581BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

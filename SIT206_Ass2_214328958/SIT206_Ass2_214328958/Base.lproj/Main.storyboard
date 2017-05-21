@@ -78,6 +78,9 @@
                         <outlet property="resumeBtn" destination="l2a-Vw-G3w" id="Ex7-sE-Cy7"/>
                         <segue destination="igL-rA-tDF" kind="modal" identifier="menuToDiffScreen" modalTransitionStyle="crossDissolve" id="77L-ud-o2I"/>
                         <segue destination="MqD-Em-lDQ" kind="modal" identifier="resumeEasy" modalTransitionStyle="crossDissolve" id="iUO-AA-1hZ"/>
+                        <segue destination="siF-W6-qcb" kind="modal" identifier="resumeMed" modalTransitionStyle="crossDissolve" id="oZw-PM-NTl"/>
+                        <segue destination="u1l-E7-LNY" kind="modal" identifier="resumeHard" modalTransitionStyle="crossDissolve" id="4qa-Ht-qvE"/>
+                        <segue destination="AdN-Pr-IJo" kind="modal" identifier="resumeExpert" modalTransitionStyle="crossDissolve" id="ic0-Li-8bI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,6 +135,9 @@
                                 <state key="normal" title="Medium">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="siF-W6-qcb" kind="modal" modalTransitionStyle="crossDissolve" id="csl-J7-6oF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjf-lM-pTD">
                                 <rect key="frame" x="112" y="300" width="150.00000000000011" height="45"/>
@@ -144,6 +150,9 @@
                                 <state key="normal" title="Hard">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="u1l-E7-LNY" kind="modal" modalTransitionStyle="crossDissolve" id="Cio-4X-K67"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3r-zm-ANK">
                                 <rect key="frame" x="112" y="400" width="150.00000000000011" height="45"/>
@@ -156,6 +165,9 @@
                                 <state key="normal" title="Expert">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AdN-Pr-IJo" kind="modal" modalTransitionStyle="crossDissolve" id="jlC-0Q-vqD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF0-vJ-l4W">
                                 <rect key="frame" x="112" y="500" width="150" height="45"/>
@@ -369,7 +381,7 @@
         <!--Medium Game-->
         <scene sceneID="Ayh-SU-CDl">
             <objects>
-                <viewController title="Medium Game" id="siF-W6-qcb" sceneMemberID="viewController">
+                <viewController title="Medium Game" id="siF-W6-qcb" customClass="MedGameViewController" customModule="SIT206_Ass2_214328958" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OFm-8e-I32"/>
                         <viewControllerLayoutGuide type="bottom" id="Q5U-t1-i4D"/>
@@ -389,8 +401,11 @@
                                 <state key="normal" title="Return to Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="returnToMenu:" destination="siF-W6-qcb" eventType="touchUpInside" id="imf-3Q-bzP"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llZ-Vr-eDY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llZ-Vr-eDY">
                                 <rect key="frame" x="27" y="626" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="gJV-JU-Q0w"/>
@@ -422,19 +437,194 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiT-NO-7l9">
+                                <rect key="frame" x="142" y="50" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="8F1-0a-M8E"/>
+                                    <constraint firstAttribute="height" constant="90" id="Sx6-cZ-tBv"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="ypk-r3-zch"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVe-gX-upY">
+                                <rect key="frame" x="42" y="50" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="J2S-v3-Onz"/>
+                                    <constraint firstAttribute="height" constant="90" id="USg-OM-itT"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="JA3-3g-FF0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdE-QB-aq3">
+                                <rect key="frame" x="242" y="50" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="fbJ-Nb-iah"/>
+                                    <constraint firstAttribute="height" constant="90" id="uXG-xV-6ba"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="aKO-eO-xTE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGG-ww-RZH">
+                                <rect key="frame" x="142" y="150" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Icb-Mf-nWZ"/>
+                                    <constraint firstAttribute="height" constant="90" id="Z75-qo-C8s"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="4HR-qR-tzI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epi-3u-wHU">
+                                <rect key="frame" x="42" y="150" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="RO0-ti-Su9"/>
+                                    <constraint firstAttribute="height" constant="90" id="Wma-je-a1Z"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="YkN-3n-7in"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQg-A2-PLI">
+                                <rect key="frame" x="242" y="150" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="8Pt-SA-a5f"/>
+                                    <constraint firstAttribute="height" constant="90" id="OAK-fZ-IJK"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="9Hd-qN-Ymd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JA8-5E-6wV">
+                                <rect key="frame" x="142" y="250" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="AcV-BJ-K2s"/>
+                                    <constraint firstAttribute="height" constant="90" id="kO5-ce-hf4"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="oI1-h4-EaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc1-qc-mAw">
+                                <rect key="frame" x="42" y="250" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ERh-e1-RtS"/>
+                                    <constraint firstAttribute="width" constant="90" id="fF0-n3-ztf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="3YE-V4-K2p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5I-Od-t78">
+                                <rect key="frame" x="242" y="250" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="87i-MZ-2zm"/>
+                                    <constraint firstAttribute="width" constant="90" id="j2q-zH-tDZ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="0Ea-ak-1AN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-Xk-Ogi">
+                                <rect key="frame" x="142" y="350" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="0ry-8n-fxs"/>
+                                    <constraint firstAttribute="width" constant="90" id="UOt-ro-QJy"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="kpq-v4-AlR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UM-TH-RqU">
+                                <rect key="frame" x="42" y="350" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="PM6-Lq-796"/>
+                                    <constraint firstAttribute="height" constant="90" id="TAa-Np-hGw"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="Xlq-D9-X92"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-vS-jPo">
+                                <rect key="frame" x="242" y="350" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Lw6-1S-VuS"/>
+                                    <constraint firstAttribute="height" constant="90" id="nPF-Od-Z5y"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="siF-W6-qcb" eventType="touchUpInside" id="ny5-IR-GzP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58691042819999995" green="0.94695510429999996" blue="0.99835759400000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="JA8-5E-6wV" firstAttribute="top" secondItem="DGG-ww-RZH" secondAttribute="bottom" constant="10" id="3fa-ZN-KBq"/>
+                            <constraint firstItem="I9Z-Xk-Ogi" firstAttribute="leading" secondItem="9UM-TH-RqU" secondAttribute="trailing" constant="10" id="4nE-rT-IuS"/>
+                            <constraint firstItem="sFZ-vS-jPo" firstAttribute="top" secondItem="j5I-Od-t78" secondAttribute="bottom" constant="10" id="5Tq-Zl-aQt"/>
+                            <constraint firstItem="j5I-Od-t78" firstAttribute="leading" secondItem="JA8-5E-6wV" secondAttribute="trailing" constant="10" id="7ha-PO-N5M"/>
+                            <constraint firstItem="XdE-QB-aq3" firstAttribute="top" secondItem="OFm-8e-I32" secondAttribute="bottom" constant="35" id="84a-Z1-lrK"/>
                             <constraint firstItem="llZ-Vr-eDY" firstAttribute="top" secondItem="TBW-Dx-vkz" secondAttribute="bottom" constant="5" id="8l4-1X-HDh"/>
+                            <constraint firstItem="j5I-Od-t78" firstAttribute="top" secondItem="KQg-A2-PLI" secondAttribute="bottom" constant="10" id="9wy-AC-4zj"/>
+                            <constraint firstItem="9UM-TH-RqU" firstAttribute="top" secondItem="Uc1-qc-mAw" secondAttribute="bottom" constant="10" id="A6H-FT-JpL"/>
+                            <constraint firstItem="Uc1-qc-mAw" firstAttribute="top" secondItem="epi-3u-wHU" secondAttribute="bottom" constant="10" id="Bct-NO-Hco"/>
                             <constraint firstItem="llZ-Vr-eDY" firstAttribute="leading" secondItem="oiV-ch-bbv" secondAttribute="leadingMargin" id="DdV-3L-NST"/>
+                            <constraint firstItem="I9Z-Xk-Ogi" firstAttribute="top" secondItem="JA8-5E-6wV" secondAttribute="bottom" constant="10" id="E8V-Hb-ff7"/>
+                            <constraint firstItem="DGG-ww-RZH" firstAttribute="top" secondItem="AiT-NO-7l9" secondAttribute="bottom" constant="10" id="ECi-Du-Cay"/>
+                            <constraint firstItem="XdE-QB-aq3" firstAttribute="leading" secondItem="AiT-NO-7l9" secondAttribute="trailing" constant="10" id="HgY-gI-Gyl"/>
+                            <constraint firstItem="epi-3u-wHU" firstAttribute="top" secondItem="XVe-gX-upY" secondAttribute="bottom" constant="10" id="Q8e-d5-Rcu"/>
                             <constraint firstItem="TBW-Dx-vkz" firstAttribute="leading" secondItem="oiV-ch-bbv" secondAttribute="leadingMargin" id="TvW-7S-uKr"/>
+                            <constraint firstItem="AiT-NO-7l9" firstAttribute="top" secondItem="OFm-8e-I32" secondAttribute="bottom" constant="35" id="UGq-K1-ZS7"/>
+                            <constraint firstItem="DGG-ww-RZH" firstAttribute="centerX" secondItem="oiV-ch-bbv" secondAttribute="centerX" id="Yec-y8-1WV"/>
                             <constraint firstItem="1Fw-cQ-u9U" firstAttribute="leading" secondItem="oiV-ch-bbv" secondAttribute="leadingMargin" id="ZYp-cC-Qe7"/>
+                            <constraint firstItem="KQg-A2-PLI" firstAttribute="leading" secondItem="DGG-ww-RZH" secondAttribute="trailing" constant="10" id="ZrN-MY-CEp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CMB-3j-WUW" secondAttribute="trailing" id="bWk-mb-659"/>
+                            <constraint firstItem="JA8-5E-6wV" firstAttribute="centerX" secondItem="oiV-ch-bbv" secondAttribute="centerX" id="ec1-0K-dcG"/>
+                            <constraint firstItem="AiT-NO-7l9" firstAttribute="centerX" secondItem="oiV-ch-bbv" secondAttribute="centerX" id="f2L-al-lXc"/>
                             <constraint firstItem="TBW-Dx-vkz" firstAttribute="top" secondItem="1Fw-cQ-u9U" secondAttribute="bottom" id="gHJ-BD-B2m"/>
+                            <constraint firstItem="JA8-5E-6wV" firstAttribute="leading" secondItem="Uc1-qc-mAw" secondAttribute="trailing" constant="10" id="gII-CF-2Rr"/>
+                            <constraint firstItem="KQg-A2-PLI" firstAttribute="top" secondItem="XdE-QB-aq3" secondAttribute="bottom" constant="10" id="mWk-d4-pey"/>
+                            <constraint firstItem="XVe-gX-upY" firstAttribute="top" secondItem="OFm-8e-I32" secondAttribute="bottom" constant="35" id="o9j-XG-Mfv"/>
                             <constraint firstItem="Q5U-t1-i4D" firstAttribute="top" secondItem="CMB-3j-WUW" secondAttribute="bottom" id="pmJ-hN-W6I"/>
+                            <constraint firstItem="I9Z-Xk-Ogi" firstAttribute="centerX" secondItem="oiV-ch-bbv" secondAttribute="centerX" id="qy7-P8-uI9"/>
+                            <constraint firstItem="sFZ-vS-jPo" firstAttribute="leading" secondItem="I9Z-Xk-Ogi" secondAttribute="trailing" constant="10" id="s4F-Rr-Xnt"/>
                             <constraint firstItem="Q5U-t1-i4D" firstAttribute="top" secondItem="llZ-Vr-eDY" secondAttribute="bottom" constant="15" id="vpO-YO-oR1"/>
+                            <constraint firstItem="DGG-ww-RZH" firstAttribute="leading" secondItem="epi-3u-wHU" secondAttribute="trailing" constant="10" id="yCV-u0-q2G"/>
+                            <constraint firstItem="AiT-NO-7l9" firstAttribute="leading" secondItem="XVe-gX-upY" secondAttribute="trailing" constant="10" id="zGo-5F-a9F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bestTimeLbl" destination="1Fw-cQ-u9U" id="7XJ-Ax-pjG"/>
+                        <outlet property="prevTimeLbl" destination="TBW-Dx-vkz" id="7FA-vu-Hxd"/>
+                        <outlet property="returnBtn" destination="CMB-3j-WUW" id="ZPr-rD-gcZ"/>
+                        <outlet property="timerLbl" destination="llZ-Vr-eDY" id="fQn-kw-ogO"/>
+                        <outletCollection property="gameCards" destination="XVe-gX-upY" collectionClass="NSMutableArray" id="v6E-en-b4z"/>
+                        <outletCollection property="gameCards" destination="AiT-NO-7l9" collectionClass="NSMutableArray" id="BOd-zS-Hth"/>
+                        <outletCollection property="gameCards" destination="XdE-QB-aq3" collectionClass="NSMutableArray" id="Lwl-Oa-Ypm"/>
+                        <outletCollection property="gameCards" destination="epi-3u-wHU" collectionClass="NSMutableArray" id="zPE-83-RuI"/>
+                        <outletCollection property="gameCards" destination="DGG-ww-RZH" collectionClass="NSMutableArray" id="aH8-bK-TXd"/>
+                        <outletCollection property="gameCards" destination="KQg-A2-PLI" collectionClass="NSMutableArray" id="UQ6-YO-y0x"/>
+                        <outletCollection property="gameCards" destination="Uc1-qc-mAw" collectionClass="NSMutableArray" id="cSa-LP-kJG"/>
+                        <outletCollection property="gameCards" destination="JA8-5E-6wV" collectionClass="NSMutableArray" id="R3v-iA-Hf4"/>
+                        <outletCollection property="gameCards" destination="j5I-Od-t78" collectionClass="NSMutableArray" id="3AO-iI-vWY"/>
+                        <outletCollection property="gameCards" destination="9UM-TH-RqU" collectionClass="NSMutableArray" id="BAL-00-yxc"/>
+                        <outletCollection property="gameCards" destination="I9Z-Xk-Ogi" collectionClass="NSMutableArray" id="36a-7w-gQ4"/>
+                        <outletCollection property="gameCards" destination="sFZ-vS-jPo" collectionClass="NSMutableArray" id="wSJ-ey-BNQ"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="medToMenu" modalTransitionStyle="crossDissolve" id="dJh-4V-nzB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mr-w7-bRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -443,7 +633,7 @@
         <!--Hard Game-->
         <scene sceneID="iVb-0o-m0t">
             <objects>
-                <viewController title="Hard Game" id="u1l-E7-LNY" sceneMemberID="viewController">
+                <viewController title="Hard Game" id="u1l-E7-LNY" customClass="HardGameViewController" customModule="SIT206_Ass2_214328958" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kpp-nw-rqA"/>
                         <viewControllerLayoutGuide type="bottom" id="r41-qD-ThS"/>
@@ -451,8 +641,354 @@
                     <view key="view" contentMode="scaleToFill" id="fP5-C0-M4d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqc-wr-lSk">
+                                <rect key="frame" x="200" y="580" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="S4c-P1-aIS"/>
+                                    <constraint firstAttribute="height" constant="40" id="azO-HK-qw5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Return to Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToMenu:" destination="u1l-E7-LNY" eventType="touchUpInside" id="YZ7-EL-UzS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmD-Qv-910">
+                                <rect key="frame" x="27" y="626" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LCK-7U-eBZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="Lv1-iU-Fxq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Prev. Time: () 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qk-Jo-tmH">
+                                <rect key="frame" x="27" y="580" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2cz-Cp-DyL"/>
+                                    <constraint firstAttribute="width" constant="200" id="kTc-k5-QZK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best Time: () 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEj-yd-IvO">
+                                <rect key="frame" x="27" y="535" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AQp-w0-a8k"/>
+                                    <constraint firstAttribute="width" constant="200" id="Fab-tC-o5J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDV-CF-3gM">
+                                <rect key="frame" x="97" y="50" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3g6-hG-L3t"/>
+                                    <constraint firstAttribute="height" constant="80" id="F69-5c-gHH"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="G1b-4h-Esn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-aX-wOb">
+                                <rect key="frame" x="202" y="50" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="iyk-sG-jER"/>
+                                    <constraint firstAttribute="width" constant="80" id="rSt-u5-udt"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="HjH-bD-SmX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e25-xg-ykK">
+                                <rect key="frame" x="0.0" y="50" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="B1h-hR-Ilo"/>
+                                    <constraint firstAttribute="width" constant="80" id="d0S-G2-Y2f"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="gTE-0P-d7K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2W-8N-z3f">
+                                <rect key="frame" x="290" y="50" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Js5-r6-eI6"/>
+                                    <constraint firstAttribute="height" constant="80" id="ZLK-fp-z30"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="jLL-xj-kK6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l57-iv-sQ2">
+                                <rect key="frame" x="97" y="140" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Rk8-Io-fCb"/>
+                                    <constraint firstAttribute="height" constant="80" id="ui0-32-6oi"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="vjz-x0-xmZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qh0-vl-ovE">
+                                <rect key="frame" x="202" y="140" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1Of-pd-d9a"/>
+                                    <constraint firstAttribute="height" constant="80" id="WSu-o8-4eV"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="j4d-tu-r9R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbl-1G-UTO">
+                                <rect key="frame" x="0.0" y="140" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="S7m-Ig-Cu8"/>
+                                    <constraint firstAttribute="height" constant="80" id="a01-v2-zXf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="WOC-Ae-Kax"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-aC-wLl">
+                                <rect key="frame" x="97" y="230" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Lsx-OV-a7l"/>
+                                    <constraint firstAttribute="height" constant="80" id="eY9-HL-rhy"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="ufw-PA-kvv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wq5-5M-Vk5">
+                                <rect key="frame" x="97" y="320" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1cv-8b-P4E"/>
+                                    <constraint firstAttribute="height" constant="80" id="cvT-mI-L85"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="DEc-Nu-3e3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-Q1-5aN">
+                                <rect key="frame" x="97" y="410" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="X8O-Kk-WP3"/>
+                                    <constraint firstAttribute="height" constant="80" id="nJG-1W-GgX"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="aM4-Fz-mrx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkD-ke-xvb">
+                                <rect key="frame" x="202" y="230" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Z7S-eG-gYR"/>
+                                    <constraint firstAttribute="height" constant="80" id="c2e-3o-QLp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="UaV-5z-BKm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbV-DS-IsP">
+                                <rect key="frame" x="202" y="320" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="cxC-VO-RMP"/>
+                                    <constraint firstAttribute="height" constant="80" id="mwd-ap-i3z"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="olN-8C-FMV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-T8-4fq">
+                                <rect key="frame" x="202" y="410" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="lcK-A8-ir8"/>
+                                    <constraint firstAttribute="width" constant="80" id="w4O-cl-MzF"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="mKh-YN-5Iz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li1-LQ-TrJ">
+                                <rect key="frame" x="290" y="140" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="PHG-oB-Ngs"/>
+                                    <constraint firstAttribute="height" constant="80" id="Sjd-F1-ugQ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="MLt-et-CiI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9r-EN-1kw">
+                                <rect key="frame" x="290" y="230" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="FhI-fv-nIH"/>
+                                    <constraint firstAttribute="width" constant="80" id="cdm-Jb-pSI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="uGC-Dh-yYk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruM-3P-rSE">
+                                <rect key="frame" x="290" y="320" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="6qX-VK-J1p"/>
+                                    <constraint firstAttribute="width" constant="80" id="sfl-jb-ROn"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="wrq-C3-aNP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq6-aJ-Eqa">
+                                <rect key="frame" x="290" y="410" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Gff-89-Qhg"/>
+                                    <constraint firstAttribute="width" constant="80" id="qbd-oi-fI1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="Ury-6N-XSC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW0-rg-8cG">
+                                <rect key="frame" x="0.0" y="230" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="bBO-EP-H0d"/>
+                                    <constraint firstAttribute="height" constant="80" id="wGy-TS-HLU"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="fdG-Qd-JoA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imq-vA-ZUJ">
+                                <rect key="frame" x="0.0" y="320" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ipZ-75-X8G"/>
+                                    <constraint firstAttribute="width" constant="80" id="ppM-ih-rda"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="91n-rT-Yed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOx-Lu-Nf1">
+                                <rect key="frame" x="0.0" y="410" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="hRe-fQ-fbr"/>
+                                    <constraint firstAttribute="height" constant="80" id="uWj-vZ-y0e"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="u1l-E7-LNY" eventType="touchUpInside" id="MHL-TF-WHx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.58691042819999995" green="0.94695510429999996" blue="0.99835759400000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xbl-1G-UTO" firstAttribute="top" secondItem="e25-xg-ykK" secondAttribute="bottom" constant="10" id="0t7-Ee-HEA"/>
+                            <constraint firstItem="l57-iv-sQ2" firstAttribute="top" secondItem="QDV-CF-3gM" secondAttribute="bottom" constant="10" id="1H7-wk-yCT"/>
+                            <constraint firstItem="r41-qD-ThS" firstAttribute="top" secondItem="vqc-wr-lSk" secondAttribute="bottom" id="1cx-TT-DuQ"/>
+                            <constraint firstItem="LJT-Q1-5aN" firstAttribute="leading" secondItem="KOx-Lu-Nf1" secondAttribute="trailing" constant="10" id="3yC-zf-Y23"/>
+                            <constraint firstItem="A2W-8N-z3f" firstAttribute="top" secondItem="Kpp-nw-rqA" secondAttribute="bottom" constant="35" id="5oB-XE-3Sc"/>
+                            <constraint firstItem="wq5-5M-Vk5" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="-45" id="6dC-gg-8RQ"/>
+                            <constraint firstItem="O5q-aC-wLl" firstAttribute="top" secondItem="l57-iv-sQ2" secondAttribute="bottom" constant="10" id="6m9-KY-06C"/>
+                            <constraint firstItem="Y9r-EN-1kw" firstAttribute="leading" secondItem="OkD-ke-xvb" secondAttribute="trailing" constant="10" id="9nV-ng-Rtj"/>
+                            <constraint firstItem="Li1-LQ-TrJ" firstAttribute="leading" secondItem="qh0-vl-ovE" secondAttribute="trailing" constant="10" id="9ov-mT-NaN"/>
+                            <constraint firstItem="Y9r-EN-1kw" firstAttribute="top" secondItem="Li1-LQ-TrJ" secondAttribute="bottom" constant="10" id="Akz-WF-OGn"/>
+                            <constraint firstItem="O5q-aC-wLl" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="-45" id="Aut-l8-bmT"/>
+                            <constraint firstItem="l57-iv-sQ2" firstAttribute="leading" secondItem="Xbl-1G-UTO" secondAttribute="trailing" constant="10" id="DBW-ao-Y7a"/>
+                            <constraint firstItem="wEj-yd-IvO" firstAttribute="leading" secondItem="fP5-C0-M4d" secondAttribute="leadingMargin" id="FPQ-Hu-JkV"/>
+                            <constraint firstItem="l57-iv-sQ2" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="-45" id="H0l-1A-chW"/>
+                            <constraint firstItem="wq5-5M-Vk5" firstAttribute="leading" secondItem="imq-vA-ZUJ" secondAttribute="trailing" constant="10" id="Kc2-Ie-8ND"/>
+                            <constraint firstItem="ruM-3P-rSE" firstAttribute="leading" secondItem="IbV-DS-IsP" secondAttribute="trailing" constant="10" id="Krk-dL-0Mm"/>
+                            <constraint firstItem="KOx-Lu-Nf1" firstAttribute="top" secondItem="imq-vA-ZUJ" secondAttribute="bottom" constant="10" id="L87-Gv-HOU"/>
+                            <constraint firstItem="IzO-T8-4fq" firstAttribute="top" secondItem="IbV-DS-IsP" secondAttribute="bottom" constant="10" id="N1M-Oo-cDo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vqc-wr-lSk" secondAttribute="trailing" id="Ouy-tD-mZX"/>
+                            <constraint firstItem="6Qk-Jo-tmH" firstAttribute="leading" secondItem="fP5-C0-M4d" secondAttribute="leadingMargin" id="Pd1-ff-juk"/>
+                            <constraint firstItem="6Qk-Jo-tmH" firstAttribute="top" secondItem="wEj-yd-IvO" secondAttribute="bottom" id="SqE-aa-hpT"/>
+                            <constraint firstItem="e25-xg-ykK" firstAttribute="top" secondItem="Kpp-nw-rqA" secondAttribute="bottom" constant="35" id="TJi-z3-VVM"/>
+                            <constraint firstItem="wq5-5M-Vk5" firstAttribute="top" secondItem="O5q-aC-wLl" secondAttribute="bottom" constant="10" id="U13-UI-cya"/>
+                            <constraint firstItem="IbV-DS-IsP" firstAttribute="top" secondItem="OkD-ke-xvb" secondAttribute="bottom" constant="10" id="UiL-fg-rkx"/>
+                            <constraint firstItem="OkD-ke-xvb" firstAttribute="top" secondItem="qh0-vl-ovE" secondAttribute="bottom" constant="10" id="WMN-lr-sRb"/>
+                            <constraint firstItem="LJT-Q1-5aN" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="-45" id="Wnx-Cb-Hqt"/>
+                            <constraint firstItem="qh0-vl-ovE" firstAttribute="top" secondItem="qgd-aX-wOb" secondAttribute="bottom" constant="10" id="YCS-tr-9xg"/>
+                            <constraint firstItem="O5q-aC-wLl" firstAttribute="leading" secondItem="DW0-rg-8cG" secondAttribute="trailing" constant="10" id="Yad-YD-d04"/>
+                            <constraint firstItem="qgd-aX-wOb" firstAttribute="top" secondItem="Kpp-nw-rqA" secondAttribute="bottom" constant="35" id="a91-yB-WgG"/>
+                            <constraint firstItem="OkD-ke-xvb" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="45" id="akh-cv-aS6"/>
+                            <constraint firstItem="DW0-rg-8cG" firstAttribute="top" secondItem="Xbl-1G-UTO" secondAttribute="bottom" constant="10" id="cok-j3-fie"/>
+                            <constraint firstItem="QDV-CF-3gM" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="-45" id="dLn-fs-oyr"/>
+                            <constraint firstItem="IzO-T8-4fq" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="45" id="eg3-8Y-HkS"/>
+                            <constraint firstItem="LJT-Q1-5aN" firstAttribute="top" secondItem="wq5-5M-Vk5" secondAttribute="bottom" constant="10" id="eoi-Pb-zPS"/>
+                            <constraint firstItem="xmD-Qv-910" firstAttribute="leading" secondItem="fP5-C0-M4d" secondAttribute="leadingMargin" id="fK5-AL-kqZ"/>
+                            <constraint firstItem="qh0-vl-ovE" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="45" id="gIx-N3-24l"/>
+                            <constraint firstItem="IbV-DS-IsP" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="45" id="gLI-xF-6dd"/>
+                            <constraint firstItem="xmD-Qv-910" firstAttribute="top" secondItem="6Qk-Jo-tmH" secondAttribute="bottom" constant="5" id="hWS-Gx-XIj"/>
+                            <constraint firstItem="qgd-aX-wOb" firstAttribute="centerX" secondItem="fP5-C0-M4d" secondAttribute="centerX" constant="45" id="iKn-nk-RzL"/>
+                            <constraint firstItem="ruM-3P-rSE" firstAttribute="top" secondItem="Y9r-EN-1kw" secondAttribute="bottom" constant="10" id="ibb-tz-Nrv"/>
+                            <constraint firstItem="Li1-LQ-TrJ" firstAttribute="top" secondItem="A2W-8N-z3f" secondAttribute="bottom" constant="10" id="jUt-a2-5st"/>
+                            <constraint firstItem="A2W-8N-z3f" firstAttribute="leading" secondItem="qgd-aX-wOb" secondAttribute="trailing" constant="10" id="p4w-Bi-dN3"/>
+                            <constraint firstItem="imq-vA-ZUJ" firstAttribute="top" secondItem="DW0-rg-8cG" secondAttribute="bottom" constant="10" id="rQB-8w-Wfw"/>
+                            <constraint firstItem="r41-qD-ThS" firstAttribute="top" secondItem="xmD-Qv-910" secondAttribute="bottom" constant="15" id="snZ-wH-xtv"/>
+                            <constraint firstItem="QDV-CF-3gM" firstAttribute="top" secondItem="Kpp-nw-rqA" secondAttribute="bottom" constant="35" id="uHa-Th-h1X"/>
+                            <constraint firstItem="iq6-aJ-Eqa" firstAttribute="top" secondItem="ruM-3P-rSE" secondAttribute="bottom" constant="10" id="wDx-pZ-0VI"/>
+                            <constraint firstItem="iq6-aJ-Eqa" firstAttribute="leading" secondItem="IzO-T8-4fq" secondAttribute="trailing" constant="10" id="wy3-qz-HX6"/>
+                            <constraint firstItem="QDV-CF-3gM" firstAttribute="leading" secondItem="e25-xg-ykK" secondAttribute="trailing" constant="10" id="xAB-Np-QGi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bestTimeLbl" destination="wEj-yd-IvO" id="gkG-Za-rGc"/>
+                        <outlet property="prevTimeLbl" destination="6Qk-Jo-tmH" id="BXc-sp-oDM"/>
+                        <outlet property="returnBtn" destination="vqc-wr-lSk" id="ZuU-TU-vDJ"/>
+                        <outlet property="timerLbl" destination="xmD-Qv-910" id="dz7-dY-17G"/>
+                        <outletCollection property="gameCards" destination="e25-xg-ykK" collectionClass="NSMutableArray" id="6ZK-p2-D3j"/>
+                        <outletCollection property="gameCards" destination="QDV-CF-3gM" collectionClass="NSMutableArray" id="g0t-vL-L2h"/>
+                        <outletCollection property="gameCards" destination="qgd-aX-wOb" collectionClass="NSMutableArray" id="S6E-mp-Xr7"/>
+                        <outletCollection property="gameCards" destination="A2W-8N-z3f" collectionClass="NSMutableArray" id="oF1-6E-IuA"/>
+                        <outletCollection property="gameCards" destination="Xbl-1G-UTO" collectionClass="NSMutableArray" id="FcB-wW-wy3"/>
+                        <outletCollection property="gameCards" destination="l57-iv-sQ2" collectionClass="NSMutableArray" id="KVO-mq-6H7"/>
+                        <outletCollection property="gameCards" destination="qh0-vl-ovE" collectionClass="NSMutableArray" id="I8s-je-mid"/>
+                        <outletCollection property="gameCards" destination="Li1-LQ-TrJ" collectionClass="NSMutableArray" id="Vdf-sk-mJW"/>
+                        <outletCollection property="gameCards" destination="DW0-rg-8cG" collectionClass="NSMutableArray" id="VLu-Pu-doB"/>
+                        <outletCollection property="gameCards" destination="O5q-aC-wLl" collectionClass="NSMutableArray" id="aGd-9U-86x"/>
+                        <outletCollection property="gameCards" destination="OkD-ke-xvb" collectionClass="NSMutableArray" id="XbA-0K-jEL"/>
+                        <outletCollection property="gameCards" destination="Y9r-EN-1kw" collectionClass="NSMutableArray" id="zjC-bE-HY0"/>
+                        <outletCollection property="gameCards" destination="imq-vA-ZUJ" collectionClass="NSMutableArray" id="UtQ-GA-M2d"/>
+                        <outletCollection property="gameCards" destination="wq5-5M-Vk5" collectionClass="NSMutableArray" id="m88-HR-OPc"/>
+                        <outletCollection property="gameCards" destination="IbV-DS-IsP" collectionClass="NSMutableArray" id="WVy-G7-rB2"/>
+                        <outletCollection property="gameCards" destination="ruM-3P-rSE" collectionClass="NSMutableArray" id="7ce-T5-90E"/>
+                        <outletCollection property="gameCards" destination="KOx-Lu-Nf1" collectionClass="NSMutableArray" id="c0R-Db-uvP"/>
+                        <outletCollection property="gameCards" destination="LJT-Q1-5aN" collectionClass="NSMutableArray" id="6XK-qK-hlE"/>
+                        <outletCollection property="gameCards" destination="IzO-T8-4fq" collectionClass="NSMutableArray" id="GTr-tv-qT9"/>
+                        <outletCollection property="gameCards" destination="iq6-aJ-Eqa" collectionClass="NSMutableArray" id="JQ9-s3-J77"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="hardToMenu" modalTransitionStyle="crossDissolve" id="BrW-up-lA2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9T-qG-La2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,7 +997,7 @@
         <!--Expert Game-->
         <scene sceneID="HzV-pN-soY">
             <objects>
-                <viewController title="Expert Game" id="AdN-Pr-IJo" sceneMemberID="viewController">
+                <viewController title="Expert Game" id="AdN-Pr-IJo" customClass="ExpGameViewController" customModule="SIT206_Ass2_214328958" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MHp-nP-BH1"/>
                         <viewControllerLayoutGuide type="bottom" id="gcf-om-1MZ"/>
@@ -469,8 +1005,494 @@
                     <view key="view" contentMode="scaleToFill" id="9ue-QK-8dA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-sc-sy1">
+                                <rect key="frame" x="200" y="580" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GZE-N1-pLH"/>
+                                    <constraint firstAttribute="width" constant="150" id="O9F-bq-eTw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Return to Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToMenu:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="paa-hm-x7l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOr-G0-Of8">
+                                <rect key="frame" x="27" y="626" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZPI-l7-NOi"/>
+                                    <constraint firstAttribute="height" constant="30" id="oTk-e6-58c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Prev. Time: () 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-r1-81l">
+                                <rect key="frame" x="27" y="580" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DOR-Hv-kfc"/>
+                                    <constraint firstAttribute="width" constant="200" id="X4G-7m-4Lv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best Time: () 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94g-3g-0CE">
+                                <rect key="frame" x="27" y="535" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4Ba-xq-Mug"/>
+                                    <constraint firstAttribute="width" constant="200" id="VYd-kB-Cgl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e40-hW-5Ej">
+                                <rect key="frame" x="154" y="50" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="A4L-ag-lee"/>
+                                    <constraint firstAttribute="height" constant="65" id="tAA-Df-vkT"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="2rT-bu-wtA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vr-I7-PpZ">
+                                <rect key="frame" x="80" y="50" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="74X-H2-XaI"/>
+                                    <constraint firstAttribute="height" constant="65" id="fTk-3P-BBL"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="Mor-73-wnv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-Eq-zB0">
+                                <rect key="frame" x="5" y="50" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="3ZD-jC-eB0"/>
+                                    <constraint firstAttribute="height" constant="65" id="hR5-mX-Ft9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="a4T-91-gam"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNj-MD-43F">
+                                <rect key="frame" x="230" y="50" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="MBL-1k-I5J"/>
+                                    <constraint firstAttribute="width" constant="65" id="ujY-aZ-D9E"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="ExS-rs-wgO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-hF-WPU">
+                                <rect key="frame" x="305" y="50" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="ljt-zs-mLO"/>
+                                    <constraint firstAttribute="width" constant="65" id="vQ1-Tq-C6b"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="odE-AU-IA5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-PP-Uci">
+                                <rect key="frame" x="155" y="125" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="YOK-3D-bIb"/>
+                                    <constraint firstAttribute="width" constant="65" id="wx0-lj-uKM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="eH6-0Q-hMv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="292-Yc-Hzm">
+                                <rect key="frame" x="155" y="200" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="eOv-aJ-YGb"/>
+                                    <constraint firstAttribute="height" constant="65" id="g0E-Az-LFp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="hIw-aM-CSy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAx-1U-iYD">
+                                <rect key="frame" x="155" y="275" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="WeR-6H-9ba"/>
+                                    <constraint firstAttribute="width" constant="65" id="iD9-ka-I7C"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="zxJ-7r-3iq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zP-qt-zlZ">
+                                <rect key="frame" x="155" y="350" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="cDX-DV-OHR"/>
+                                    <constraint firstAttribute="height" constant="65" id="qid-oe-vbl"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="UQy-JS-YA6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zA-2n-TU1">
+                                <rect key="frame" x="155" y="425" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="M1g-Mm-mR5"/>
+                                    <constraint firstAttribute="height" constant="65" id="lXB-iX-fmx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="rcq-vk-fsB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-p4-Goj">
+                                <rect key="frame" x="80" y="125" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="TDV-aD-LFY"/>
+                                    <constraint firstAttribute="height" constant="65" id="o6M-jk-Yzs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="tRY-tA-uhO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noz-3s-r6E">
+                                <rect key="frame" x="5" y="125" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="DeF-PF-thM"/>
+                                    <constraint firstAttribute="width" constant="65" id="gdI-tE-0kX"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="2Ds-rd-Oui"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnT-ii-322">
+                                <rect key="frame" x="230" y="125" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="5EY-KQ-F9l"/>
+                                    <constraint firstAttribute="width" constant="65" id="HbF-b8-jfp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="S1U-x3-dg9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-9Q-T0W">
+                                <rect key="frame" x="305" y="125" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="b9N-LO-13X"/>
+                                    <constraint firstAttribute="height" constant="65" id="x4o-aP-vvQ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="GYb-Ec-cEj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-Nr-THO">
+                                <rect key="frame" x="80" y="200" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="dfV-eb-v3p"/>
+                                    <constraint firstAttribute="width" constant="65" id="who-rd-BwO"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="g3B-j4-56P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz3-lo-dK9">
+                                <rect key="frame" x="5" y="200" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="AyH-7W-mOU"/>
+                                    <constraint firstAttribute="width" constant="65" id="tex-X1-S1x"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="jA3-mP-fdq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPs-qB-NeB">
+                                <rect key="frame" x="230" y="200" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="gl5-2v-28y"/>
+                                    <constraint firstAttribute="height" constant="65" id="kSg-qL-HVk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="qFE-Mn-uhS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-Zk-UB7">
+                                <rect key="frame" x="305" y="200" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="dTh-Pc-Ak6"/>
+                                    <constraint firstAttribute="width" constant="65" id="p4F-eF-htd"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="aJF-XK-VRc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7U-oc-oec">
+                                <rect key="frame" x="80" y="275" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="BSb-uL-B9H"/>
+                                    <constraint firstAttribute="height" constant="65" id="Km5-77-DCo"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="spW-5f-Iug"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-P2-MGk">
+                                <rect key="frame" x="5" y="275" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Y37-8R-rAc"/>
+                                    <constraint firstAttribute="width" constant="65" id="e84-ge-6Q9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="skO-DC-Xr9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZS-oV-2af">
+                                <rect key="frame" x="230" y="275" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Rq4-gh-I9Y"/>
+                                    <constraint firstAttribute="height" constant="65" id="uUW-oB-SU9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="Dir-3M-Vl3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Jk-tBD">
+                                <rect key="frame" x="305" y="275" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="5AJ-C3-zwe"/>
+                                    <constraint firstAttribute="width" constant="65" id="e6s-80-ywM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="v4B-eC-e67"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqu-YF-OD8">
+                                <rect key="frame" x="80" y="350" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="cYQ-6U-cvu"/>
+                                    <constraint firstAttribute="height" constant="65" id="dV6-lE-dl9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="xKM-0m-P0M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0r-rD-HzK">
+                                <rect key="frame" x="5" y="350" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="BdT-sK-gW5"/>
+                                    <constraint firstAttribute="height" constant="65" id="mqK-Px-kpj"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="DfH-aN-7YR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVC-5L-tcs">
+                                <rect key="frame" x="230" y="350" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="VRh-F1-WF1"/>
+                                    <constraint firstAttribute="height" constant="65" id="WDu-X8-r2P"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="6Br-dZ-d7q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0j-nf-BVW">
+                                <rect key="frame" x="305" y="350" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Phu-WT-2XW"/>
+                                    <constraint firstAttribute="width" constant="65" id="jAd-Os-kSo"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="BqF-mt-duE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKn-Dk-nj7">
+                                <rect key="frame" x="80" y="425" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="KLn-Rj-wb3"/>
+                                    <constraint firstAttribute="height" constant="65" id="nxr-Mh-cjv"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="esL-Ua-hn9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-WU-4ar">
+                                <rect key="frame" x="5" y="425" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="8an-0J-aFQ"/>
+                                    <constraint firstAttribute="width" constant="65" id="EhM-Ev-Cse"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="frE-MZ-WgM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-mD-cPJ">
+                                <rect key="frame" x="230" y="425" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="AxT-CU-HgQ"/>
+                                    <constraint firstAttribute="height" constant="65" id="qVk-d9-Gth"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="24x-Xv-JWo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-Iw-388">
+                                <rect key="frame" x="305" y="425" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.77486910990000002" green="0.49148912230000003" blue="0.39487482309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="KXs-Kc-C0O"/>
+                                    <constraint firstAttribute="height" constant="65" id="vXI-2l-7JK"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="flipCard:" destination="AdN-Pr-IJo" eventType="touchUpInside" id="HRk-tz-SY3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.58691042819999995" green="0.94695510429999996" blue="0.99835759400000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="G0j-nf-BVW" firstAttribute="leading" secondItem="VVC-5L-tcs" secondAttribute="trailing" constant="10" id="0Cw-VE-pRO"/>
+                            <constraint firstItem="VVC-5L-tcs" firstAttribute="leading" secondItem="7zP-qt-zlZ" secondAttribute="trailing" constant="10" id="0H6-Bv-riC"/>
+                            <constraint firstItem="2xj-Nr-THO" firstAttribute="leading" secondItem="pz3-lo-dK9" secondAttribute="trailing" constant="10" id="2ge-RV-4r9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Hs-sc-sy1" secondAttribute="trailing" id="2mE-d3-B0c"/>
+                            <constraint firstItem="PAx-1U-iYD" firstAttribute="centerX" secondItem="9ue-QK-8dA" secondAttribute="centerX" id="3US-Ir-MG2"/>
+                            <constraint firstItem="Sx3-PP-Uci" firstAttribute="top" secondItem="e40-hW-5Ej" secondAttribute="bottom" constant="10" id="6Ts-zN-aUx"/>
+                            <constraint firstItem="7zP-qt-zlZ" firstAttribute="top" secondItem="PAx-1U-iYD" secondAttribute="bottom" constant="10" id="6fV-B8-HOS"/>
+                            <constraint firstItem="fKn-Dk-nj7" firstAttribute="top" secondItem="aqu-YF-OD8" secondAttribute="bottom" constant="10" id="8Sx-G0-LEN"/>
+                            <constraint firstItem="t0r-rD-HzK" firstAttribute="top" secondItem="qaK-P2-MGk" secondAttribute="bottom" constant="10" id="AH8-pX-1dF"/>
+                            <constraint firstItem="e40-hW-5Ej" firstAttribute="centerX" secondItem="9ue-QK-8dA" secondAttribute="centerX" id="Adm-Tp-oeX"/>
+                            <constraint firstItem="hZS-oV-2af" firstAttribute="top" secondItem="pPs-qB-NeB" secondAttribute="bottom" constant="10" id="DCM-Hm-ufT"/>
+                            <constraint firstItem="hZS-oV-2af" firstAttribute="leading" secondItem="PAx-1U-iYD" secondAttribute="trailing" constant="10" id="HDu-b1-NA2"/>
+                            <constraint firstItem="6vr-I7-PpZ" firstAttribute="leading" secondItem="Fgv-Eq-zB0" secondAttribute="trailing" constant="10" id="IDm-UE-pnZ"/>
+                            <constraint firstItem="gcf-om-1MZ" firstAttribute="top" secondItem="DOr-G0-Of8" secondAttribute="bottom" constant="15" id="KOb-I7-XyE"/>
+                            <constraint firstItem="DOr-G0-Of8" firstAttribute="leading" secondItem="9ue-QK-8dA" secondAttribute="leadingMargin" id="Lnl-3Y-1yy"/>
+                            <constraint firstItem="PAx-1U-iYD" firstAttribute="top" secondItem="292-Yc-Hzm" secondAttribute="bottom" constant="10" id="MLY-ro-F5B"/>
+                            <constraint firstItem="EOc-hF-WPU" firstAttribute="leading" secondItem="uNj-MD-43F" secondAttribute="trailing" constant="10" id="NMm-lm-vmF"/>
+                            <constraint firstItem="94g-3g-0CE" firstAttribute="leading" secondItem="9ue-QK-8dA" secondAttribute="leadingMargin" id="NUZ-fD-el5"/>
+                            <constraint firstItem="292-Yc-Hzm" firstAttribute="leading" secondItem="2xj-Nr-THO" secondAttribute="trailing" constant="10" id="Nf3-5d-1qH"/>
+                            <constraint firstItem="gcf-om-1MZ" firstAttribute="top" secondItem="5Hs-sc-sy1" secondAttribute="bottom" id="Nf8-Fd-K9S"/>
+                            <constraint firstItem="TnT-ii-322" firstAttribute="top" secondItem="uNj-MD-43F" secondAttribute="bottom" constant="10" id="Nrs-HJ-dS3"/>
+                            <constraint firstItem="DOr-G0-Of8" firstAttribute="top" secondItem="BGl-r1-81l" secondAttribute="bottom" constant="5" id="OhH-U6-m97"/>
+                            <constraint firstItem="Se5-mD-cPJ" firstAttribute="top" secondItem="VVC-5L-tcs" secondAttribute="bottom" constant="10" id="PQA-YW-ioi"/>
+                            <constraint firstItem="7zA-2n-TU1" firstAttribute="top" secondItem="7zP-qt-zlZ" secondAttribute="bottom" constant="10" id="PbC-a0-yWa"/>
+                            <constraint firstItem="2Lg-9Q-T0W" firstAttribute="top" secondItem="EOc-hF-WPU" secondAttribute="bottom" constant="10" id="TMx-rC-mLV"/>
+                            <constraint firstItem="Icf-Iw-388" firstAttribute="leading" secondItem="Se5-mD-cPJ" secondAttribute="trailing" constant="10" id="Uzm-HA-h9X"/>
+                            <constraint firstItem="PAx-1U-iYD" firstAttribute="leading" secondItem="Z7U-oc-oec" secondAttribute="trailing" constant="10" id="WMs-Xn-806"/>
+                            <constraint firstItem="7zA-2n-TU1" firstAttribute="leading" secondItem="fKn-Dk-nj7" secondAttribute="trailing" constant="10" id="Xg4-C1-krG"/>
+                            <constraint firstItem="noz-3s-r6E" firstAttribute="top" secondItem="Fgv-Eq-zB0" secondAttribute="bottom" constant="10" id="YjX-ts-6Vg"/>
+                            <constraint firstItem="uNj-MD-43F" firstAttribute="top" secondItem="MHp-nP-BH1" secondAttribute="bottom" constant="35" id="adZ-jw-1p6"/>
+                            <constraint firstItem="6vr-I7-PpZ" firstAttribute="top" secondItem="MHp-nP-BH1" secondAttribute="bottom" constant="35" id="bMv-Mb-YvE"/>
+                            <constraint firstItem="aqu-YF-OD8" firstAttribute="leading" secondItem="t0r-rD-HzK" secondAttribute="trailing" constant="10" id="e6R-Hg-aGB"/>
+                            <constraint firstItem="e40-hW-5Ej" firstAttribute="leading" secondItem="6vr-I7-PpZ" secondAttribute="trailing" constant="10" id="eTE-SE-WGF"/>
+                            <constraint firstItem="Se5-mD-cPJ" firstAttribute="leading" secondItem="7zA-2n-TU1" secondAttribute="trailing" constant="10" id="fC0-Td-z14"/>
+                            <constraint firstItem="BGl-r1-81l" firstAttribute="top" secondItem="94g-3g-0CE" secondAttribute="bottom" id="fRS-SX-sHC"/>
+                            <constraint firstItem="2Lg-9Q-T0W" firstAttribute="leading" secondItem="TnT-ii-322" secondAttribute="trailing" constant="10" id="fSx-rs-JkZ"/>
+                            <constraint firstItem="e40-hW-5Ej" firstAttribute="top" secondItem="MHp-nP-BH1" secondAttribute="bottom" constant="35" id="g3r-f8-mcm"/>
+                            <constraint firstItem="Z7U-oc-oec" firstAttribute="leading" secondItem="qaK-P2-MGk" secondAttribute="trailing" constant="10" id="grr-yd-7lx"/>
+                            <constraint firstItem="RjE-p4-Goj" firstAttribute="top" secondItem="6vr-I7-PpZ" secondAttribute="bottom" constant="10" id="hKm-hu-cdq"/>
+                            <constraint firstItem="BGl-r1-81l" firstAttribute="leading" secondItem="9ue-QK-8dA" secondAttribute="leadingMargin" id="hPg-5A-HmS"/>
+                            <constraint firstItem="rbs-Jk-tBD" firstAttribute="leading" secondItem="hZS-oV-2af" secondAttribute="trailing" constant="10" id="hcQ-Lu-csO"/>
+                            <constraint firstItem="Sx3-PP-Uci" firstAttribute="centerX" secondItem="9ue-QK-8dA" secondAttribute="centerX" id="hfR-Mb-jIh"/>
+                            <constraint firstItem="292-Yc-Hzm" firstAttribute="centerX" secondItem="9ue-QK-8dA" secondAttribute="centerX" id="iQZ-cH-u6U"/>
+                            <constraint firstItem="dRl-Zk-UB7" firstAttribute="leading" secondItem="pPs-qB-NeB" secondAttribute="trailing" constant="10" id="jHg-eM-Ztf"/>
+                            <constraint firstItem="fKn-Dk-nj7" firstAttribute="leading" secondItem="ehE-WU-4ar" secondAttribute="trailing" constant="10" id="jhf-hT-Sjn"/>
+                            <constraint firstItem="ehE-WU-4ar" firstAttribute="top" secondItem="t0r-rD-HzK" secondAttribute="bottom" constant="10" id="l0V-hy-4qH"/>
+                            <constraint firstItem="rbs-Jk-tBD" firstAttribute="top" secondItem="dRl-Zk-UB7" secondAttribute="bottom" constant="10" id="lgm-4t-gPk"/>
+                            <constraint firstItem="Z7U-oc-oec" firstAttribute="top" secondItem="2xj-Nr-THO" secondAttribute="bottom" constant="10" id="lgz-tS-BnU"/>
+                            <constraint firstItem="292-Yc-Hzm" firstAttribute="top" secondItem="Sx3-PP-Uci" secondAttribute="bottom" constant="10" id="lhw-hT-2yS"/>
+                            <constraint firstItem="dRl-Zk-UB7" firstAttribute="top" secondItem="2Lg-9Q-T0W" secondAttribute="bottom" constant="10" id="mDH-We-3jr"/>
+                            <constraint firstItem="uNj-MD-43F" firstAttribute="leading" secondItem="e40-hW-5Ej" secondAttribute="trailing" constant="10" id="mJQ-wn-0TA"/>
+                            <constraint firstItem="pPs-qB-NeB" firstAttribute="leading" secondItem="292-Yc-Hzm" secondAttribute="trailing" constant="10" id="nYv-cB-OIY"/>
+                            <constraint firstItem="TnT-ii-322" firstAttribute="leading" secondItem="Sx3-PP-Uci" secondAttribute="trailing" constant="10" id="o6a-Tj-3U1"/>
+                            <constraint firstItem="7zP-qt-zlZ" firstAttribute="leading" secondItem="aqu-YF-OD8" secondAttribute="trailing" constant="10" id="pgD-oP-jgh"/>
+                            <constraint firstItem="pPs-qB-NeB" firstAttribute="top" secondItem="TnT-ii-322" secondAttribute="bottom" constant="10" id="psX-y9-1ds"/>
+                            <constraint firstItem="7zP-qt-zlZ" firstAttribute="centerX" secondItem="9ue-QK-8dA" secondAttribute="centerX" id="q1R-YN-r7k"/>
+                            <constraint firstItem="qaK-P2-MGk" firstAttribute="top" secondItem="pz3-lo-dK9" secondAttribute="bottom" constant="10" id="qIm-2j-XL7"/>
+                            <constraint firstItem="pz3-lo-dK9" firstAttribute="top" secondItem="noz-3s-r6E" secondAttribute="bottom" constant="10" id="qyi-TJ-D8b"/>
+                            <constraint firstItem="Icf-Iw-388" firstAttribute="top" secondItem="G0j-nf-BVW" secondAttribute="bottom" constant="10" id="tZf-Ft-p6y"/>
+                            <constraint firstItem="EOc-hF-WPU" firstAttribute="top" secondItem="MHp-nP-BH1" secondAttribute="bottom" constant="35" id="toK-kl-zex"/>
+                            <constraint firstItem="Fgv-Eq-zB0" firstAttribute="top" secondItem="MHp-nP-BH1" secondAttribute="bottom" constant="35" id="vNx-eV-pt1"/>
+                            <constraint firstItem="7zA-2n-TU1" firstAttribute="centerX" secondItem="9ue-QK-8dA" secondAttribute="centerX" id="vTm-TJ-gHZ"/>
+                            <constraint firstItem="RjE-p4-Goj" firstAttribute="leading" secondItem="noz-3s-r6E" secondAttribute="trailing" constant="10" id="vdd-Pu-xPf"/>
+                            <constraint firstItem="aqu-YF-OD8" firstAttribute="top" secondItem="Z7U-oc-oec" secondAttribute="bottom" constant="10" id="x91-T9-yWG"/>
+                            <constraint firstItem="2xj-Nr-THO" firstAttribute="top" secondItem="RjE-p4-Goj" secondAttribute="bottom" constant="10" id="xux-Kg-ghD"/>
+                            <constraint firstItem="G0j-nf-BVW" firstAttribute="top" secondItem="rbs-Jk-tBD" secondAttribute="bottom" constant="10" id="yB7-Gn-u9F"/>
+                            <constraint firstItem="VVC-5L-tcs" firstAttribute="top" secondItem="hZS-oV-2af" secondAttribute="bottom" constant="10" id="zc8-VF-y7T"/>
+                            <constraint firstItem="Sx3-PP-Uci" firstAttribute="leading" secondItem="RjE-p4-Goj" secondAttribute="trailing" constant="10" id="zpU-Ns-X70"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bestTimeLbl" destination="94g-3g-0CE" id="L6W-bE-Txd"/>
+                        <outlet property="prevTimeLbl" destination="BGl-r1-81l" id="HyK-r3-tXG"/>
+                        <outlet property="returnBtn" destination="5Hs-sc-sy1" id="6ZY-56-djJ"/>
+                        <outlet property="timerLbl" destination="DOr-G0-Of8" id="sA6-cT-NmN"/>
+                        <outletCollection property="gameCards" destination="Fgv-Eq-zB0" collectionClass="NSMutableArray" id="ryG-Q7-zhF"/>
+                        <outletCollection property="gameCards" destination="6vr-I7-PpZ" collectionClass="NSMutableArray" id="nbe-fo-5aI"/>
+                        <outletCollection property="gameCards" destination="e40-hW-5Ej" collectionClass="NSMutableArray" id="Vig-cB-UUo"/>
+                        <outletCollection property="gameCards" destination="uNj-MD-43F" collectionClass="NSMutableArray" id="4EA-9A-XGT"/>
+                        <outletCollection property="gameCards" destination="EOc-hF-WPU" collectionClass="NSMutableArray" id="1qt-EK-o4Y"/>
+                        <outletCollection property="gameCards" destination="noz-3s-r6E" collectionClass="NSMutableArray" id="zYq-1y-Iwt"/>
+                        <outletCollection property="gameCards" destination="RjE-p4-Goj" collectionClass="NSMutableArray" id="48v-M4-xmq"/>
+                        <outletCollection property="gameCards" destination="Sx3-PP-Uci" collectionClass="NSMutableArray" id="Z4K-At-SQS"/>
+                        <outletCollection property="gameCards" destination="TnT-ii-322" collectionClass="NSMutableArray" id="Uid-5n-xJZ"/>
+                        <outletCollection property="gameCards" destination="2Lg-9Q-T0W" collectionClass="NSMutableArray" id="aXU-g9-i3o"/>
+                        <outletCollection property="gameCards" destination="pz3-lo-dK9" collectionClass="NSMutableArray" id="Tvx-uR-jJ6"/>
+                        <outletCollection property="gameCards" destination="2xj-Nr-THO" collectionClass="NSMutableArray" id="JHI-FT-fxl"/>
+                        <outletCollection property="gameCards" destination="292-Yc-Hzm" collectionClass="NSMutableArray" id="zh5-vW-5FE"/>
+                        <outletCollection property="gameCards" destination="pPs-qB-NeB" collectionClass="NSMutableArray" id="iOM-oz-zpJ"/>
+                        <outletCollection property="gameCards" destination="dRl-Zk-UB7" collectionClass="NSMutableArray" id="mf1-Cm-aHg"/>
+                        <outletCollection property="gameCards" destination="qaK-P2-MGk" collectionClass="NSMutableArray" id="LOl-KR-7jY"/>
+                        <outletCollection property="gameCards" destination="Z7U-oc-oec" collectionClass="NSMutableArray" id="JxH-88-9Ok"/>
+                        <outletCollection property="gameCards" destination="PAx-1U-iYD" collectionClass="NSMutableArray" id="XPp-kO-dXL"/>
+                        <outletCollection property="gameCards" destination="hZS-oV-2af" collectionClass="NSMutableArray" id="RBf-BI-snV"/>
+                        <outletCollection property="gameCards" destination="rbs-Jk-tBD" collectionClass="NSMutableArray" id="nNb-t7-Aic"/>
+                        <outletCollection property="gameCards" destination="t0r-rD-HzK" collectionClass="NSMutableArray" id="kBX-QP-D7l"/>
+                        <outletCollection property="gameCards" destination="aqu-YF-OD8" collectionClass="NSMutableArray" id="awF-7P-6iN"/>
+                        <outletCollection property="gameCards" destination="7zP-qt-zlZ" collectionClass="NSMutableArray" id="c2H-4Y-VOc"/>
+                        <outletCollection property="gameCards" destination="VVC-5L-tcs" collectionClass="NSMutableArray" id="1qq-GM-EvL"/>
+                        <outletCollection property="gameCards" destination="G0j-nf-BVW" collectionClass="NSMutableArray" id="rjj-zy-diD"/>
+                        <outletCollection property="gameCards" destination="ehE-WU-4ar" collectionClass="NSMutableArray" id="rfI-Pb-tOv"/>
+                        <outletCollection property="gameCards" destination="fKn-Dk-nj7" collectionClass="NSMutableArray" id="fez-xM-alH"/>
+                        <outletCollection property="gameCards" destination="7zA-2n-TU1" collectionClass="NSMutableArray" id="hot-qN-D0P"/>
+                        <outletCollection property="gameCards" destination="Se5-mD-cPJ" collectionClass="NSMutableArray" id="him-zx-WnN"/>
+                        <outletCollection property="gameCards" destination="Icf-Iw-388" collectionClass="NSMutableArray" id="FiX-v1-7b0"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="expToMenu" modalTransitionStyle="crossDissolve" id="jp8-2U-jtD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edG-JY-dLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -478,7 +1500,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VQt-7L-jyt"/>
+        <segue reference="ic0-Li-8bI"/>
+        <segue reference="jp8-2U-jtD"/>
+        <segue reference="4qa-Ht-qvE"/>
         <segue reference="iUO-AA-1hZ"/>
+        <segue reference="oZw-PM-NTl"/>
     </inferredMetricsTieBreakers>
 </document>

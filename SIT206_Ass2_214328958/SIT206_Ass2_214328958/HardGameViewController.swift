@@ -1,18 +1,18 @@
 //
-//  EasyGameViewController.swift
+//  HardGameViewController.swift
 //  SIT206_Ass2_214328958
 //
-//  Created by user126206 on 5/20/17.
+//  Created by user126206 on 5/21/17.
 //  Copyright © 2017 Deakin. All rights reserved.
 //
 
 import UIKit
 
-class EasyGameViewController: UIViewController {
+class HardGameViewController: UIViewController {
 
-    @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet var gameCards: [UIButton]!
     @IBOutlet weak var returnBtn: UIButton!
+    @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet weak var bestTimeLbl: UILabel!
     @IBOutlet weak var prevTimeLbl: UILabel!
     
@@ -25,6 +25,13 @@ class EasyGameViewController: UIViewController {
     var tag0 = 0
     var tag1 = 0
     var tag2 = 0
+    var tag3 = 0
+    var tag4 = 0
+    var tag5 = 0
+    var tag6 = 0
+    var tag7 = 0
+    var tag8 = 0
+    var tag9 = 0
     
     //Main game variables
     var first = true
@@ -34,7 +41,14 @@ class EasyGameViewController: UIViewController {
     var currentCards = [Int]()
     
     //Stores current found pairs
-    var easyPairs = [
+    var hardPairs = [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
         false,
         false,
         false
@@ -44,8 +58,8 @@ class EasyGameViewController: UIViewController {
         super.viewDidLoad()
 
         //Set initial scoreboard
-        bestTimeLbl.text = "Best Time: (" + easyBestName + ") " + String(easyBestTime)
-        prevTimeLbl.text = "Prev. Time: (" + easyPreviousName + ") " + String(easyPreviousTime)
+        bestTimeLbl.text = "Best Time: (" + hardBestName + ") " + String(hardBestTime)
+        prevTimeLbl.text = "Prev. Time: (" + hardPreviousName + ") " + String(hardPreviousTime)
         
         //Initial setup based on if it's a new game or ongoing one
         if (!ongoingGame) {
@@ -73,7 +87,7 @@ class EasyGameViewController: UIViewController {
             //Run until a tag is assigned
             while(!assigned) {
                 
-                let r = arc4random_uniform(3)
+                let r = arc4random_uniform(10)
                 
                 //Ensures that there will only be a pair for each tag
                 if(r == 0 && tag0 < 2) {
@@ -98,13 +112,62 @@ class EasyGameViewController: UIViewController {
                     
                     currentCards.append(Int(r))
                 }
+                else if(r == 3 && tag3 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag3 += 1
+                    
+                    currentCards.append(Int(r))
+                }
+                else if(r == 4 && tag4 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag4 += 1
+                    
+                    currentCards.append(Int(r))
+                }
+                else if(r == 5 && tag5 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag5 += 1
+                    
+                    currentCards.append(Int(r))
+                }
+                else if(r == 6 && tag6 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag6 += 1
+                    
+                    currentCards.append(Int(r))
+                }
+                else if(r == 7 && tag7 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag7 += 1
+                    
+                    currentCards.append(Int(r))
+                }
+                else if(r == 8 && tag8 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag8 += 1
+                    
+                    currentCards.append(Int(r))
+                }
+                else if(r == 9 && tag9 < 2) {
+                    card.tag = Int(r)
+                    assigned = true
+                    tag9 += 1
+                    
+                    currentCards.append(Int(r))
+                }
                 
             }
             
         }
         
         //Set and start the timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HardGameViewController.updateTimer), userInfo: nil, repeats: true)
         
     }
     
@@ -119,7 +182,7 @@ class EasyGameViewController: UIViewController {
         time = resumeTime
         timerLbl.text = "Time: " + String(time)
         currentCards = resumeCards
-        easyPairs = resumePairs
+        hardPairs = resumePairs
         
         var i = 0
         
@@ -129,17 +192,52 @@ class EasyGameViewController: UIViewController {
             i += 1
             
             //Set the correct states for each card
-            if (card.tag == 0 && easyPairs[0]) {
+            if (card.tag == 0 && hardPairs[0]) {
                 card.setImage(imgs[card.tag], for: .normal)
                 card.backgroundColor = nil
                 card.isUserInteractionEnabled = false
             }
-            else if (card.tag == 1 && easyPairs[1]) {
+            else if (card.tag == 1 && hardPairs[1]) {
                 card.setImage(imgs[card.tag], for: .normal)
                 card.backgroundColor = nil
                 card.isUserInteractionEnabled = false
             }
-            else if (card.tag == 2 && easyPairs[2]) {
+            else if (card.tag == 2 && hardPairs[2]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 3 && hardPairs[3]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 4 && hardPairs[4]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 5 && hardPairs[5]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 6 && hardPairs[6]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 7 && hardPairs[7]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 8 && hardPairs[8]) {
+                card.setImage(imgs[card.tag], for: .normal)
+                card.backgroundColor = nil
+                card.isUserInteractionEnabled = false
+            }
+            else if (card.tag == 9 && hardPairs[9]) {
                 card.setImage(imgs[card.tag], for: .normal)
                 card.backgroundColor = nil
                 card.isUserInteractionEnabled = false
@@ -148,7 +246,7 @@ class EasyGameViewController: UIViewController {
         }
         
         //Set and start the timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HardGameViewController.updateTimer), userInfo: nil, repeats: true)
         
     }
     
@@ -178,28 +276,28 @@ class EasyGameViewController: UIViewController {
             //Get score from textfield score
             let textField = alertController.textFields![0]
             
-            //Update previous scores for 'Easy'
-            easyPreviousTime = self.time
-            easyPreviousName = textField.text!
+            //Update previous scores for 'Hard'
+            hardPreviousTime = self.time
+            hardPreviousName = textField.text!
             
-            //If this is after the first game for 'Easy'
-            if (!easyFirstGame) {
-                //Check if the current score is similar or better then the best score for 'Easy'
-                if (self.time <= easyBestTime) {
-                    //Update best scores for 'Easy'
-                    easyBestName = textField.text!
-                    easyBestTime = self.time
+            //If this is after the first game for 'Hard'
+            if (!hardFirstGame) {
+                //Check if the current score is similar or better then the best score for 'Hard'
+                if (self.time <= hardBestTime) {
+                    //Update best scores for 'HArd'
+                    hardBestName = textField.text!
+                    hardBestTime = self.time
                 }
             }
             else {
-                //Update best scores for 'Easy'
-                easyBestName = textField.text!
-                easyBestTime = self.time
-                easyFirstGame = false
+                //Update best scores for 'Hard'
+                hardBestName = textField.text!
+                hardBestTime = self.time
+                hardFirstGame = false
             }
             
             //Proceed to 'Difficulty Selection' Screen
-            self.performSegue(withIdentifier: "easyToMenu", sender: self)
+            self.performSegue(withIdentifier: "hardToMenu", sender: self)
         }
         
         //Add a text field to the alert
@@ -216,7 +314,7 @@ class EasyGameViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    //Main game
+    //Main Game
     @IBAction func flipCard(_ sender: UIButton) {
         
         //First click
@@ -233,7 +331,7 @@ class EasyGameViewController: UIViewController {
             first = false
             
         }
-        //Second click
+            //Second click
         else {
             
             //If the second card matches the first
@@ -246,15 +344,15 @@ class EasyGameViewController: UIViewController {
                 sender.isUserInteractionEnabled = false
                 
                 //Found the pair with the assigned tag
-                easyPairs[sender.tag] = true
+                hardPairs[sender.tag] = true
                 
                 //If all pairs are found, end game
-                if (!easyPairs.contains(false)) {
+                if (!hardPairs.contains(false)) {
                     finishGame()
                 }
                 
             }
-            //If they don't match
+                //If they don't match
             else {
                 
                 //First, disable any further user interactions
@@ -272,7 +370,7 @@ class EasyGameViewController: UIViewController {
                     
                     //The state of the cards that have not been paired will reset
                     for card in self.gameCards {
-                        if (!self.easyPairs[card.tag]) {
+                        if (!self.hardPairs[card.tag]) {
                             card.isUserInteractionEnabled = true
                             card.setImage(nil, for: .normal)
                             card.backgroundColor = #colorLiteral(red: 0.8213501573, green: 0.5678955913, blue: 0.4694665074, alpha: 1)
@@ -288,21 +386,21 @@ class EasyGameViewController: UIViewController {
             first = true
             
         }
-        
+
     }
     
     @IBAction func returnToMenu(_ sender: UIButton) {
         
         //Save the current game state
         ongoingGame = true
-        difficulty = 1
+        difficulty = 3
         resumeTime = time
         resumeCards = currentCards
-        resumePairs = easyPairs
+        resumePairs = hardPairs
         
         //Return to Menu
-        performSegue(withIdentifier: "easyToMenu", sender: self)
+        performSegue(withIdentifier: "hardToMenu", sender: self)
         
     }
-
+    
 }

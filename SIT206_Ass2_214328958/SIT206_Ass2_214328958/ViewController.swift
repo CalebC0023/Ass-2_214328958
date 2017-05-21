@@ -14,38 +14,57 @@ var ongoingGame = false
 
 //Saved ongoing game state values
 var difficulty = 0
-var resumeTime = 0.0
+var resumeTime = 0
 var resumeCards = [Int]()
 var resumePairs = [Bool]()
+
+//The images for the cards
+var imgs = [
+    UIImage(named: "0"),
+    UIImage(named: "1"),
+    UIImage(named: "2"),
+    UIImage(named: "3"),
+    UIImage(named: "4"),
+    UIImage(named: "5"),
+    UIImage(named: "6"),
+    UIImage(named: "7"),
+    UIImage(named: "8"),
+    UIImage(named: "9"),
+    UIImage(named: "10"),
+    UIImage(named: "11"),
+    UIImage(named: "12"),
+    UIImage(named: "13"),
+    UIImage(named: "14")
+]
 
 //Saved scores
 
 //Easy
 var easyFirstGame = true
-var easyBestTime = 0.0
+var easyBestTime = 0
 var easyBestName = ""
-var easyPreviousTime = 0.0
+var easyPreviousTime = 0
 var easyPreviousName = ""
 
 //Medium
 var medFirstGame = true
-var medBestTime = 0.0
+var medBestTime = 0
 var medBestName = ""
-var medPreviousTime = 0.0
+var medPreviousTime = 0
 var medPreviousName = ""
 
 //Hard
 var hardFirstGame = true
-var hardBestTime = 0.0
+var hardBestTime = 0
 var hardBestName = ""
-var hardPreviousTime = 0.0
+var hardPreviousTime = 0
 var hardPreviousName = ""
 
 //Expert
 var expFirstGame = true
-var expBestTime = 0.0
+var expBestTime = 0
 var expBestName = ""
-var expPreviousTime = 0.0
+var expPreviousTime = 0
 var expPreviousName = ""
 
 class ViewController: UIViewController {
@@ -110,13 +129,13 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "resumeEasy", sender: self)
         }
         else if (difficulty == 2) {
-            
+            performSegue(withIdentifier: "resumeMed", sender: self)
         }
         else if (difficulty == 3) {
-            
+            performSegue(withIdentifier: "resumeHard", sender: self)
         }
         else if (difficulty == 4) {
-            
+            performSegue(withIdentifier: "resumeExpert", sender: self)
         }
         
     }
