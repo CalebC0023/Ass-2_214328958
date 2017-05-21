@@ -194,9 +194,40 @@ class EasyGameViewController: UIViewController {
                 //Found the pair with the assigned tag
                 easyPairs[sender.tag] = true
                 
+                //If all pairs are found, end game
+                if (!easyPairs.contains(false)) {
+                    finishGame()
+                }
+                
             }
             //If they don't match
             else {
+                
+                //First, disable any further user interactions
+                for card in gameCards {
+                    card.isUserInteractionEnabled = false
+                }
+                returnBtn.isUserInteractionEnabled = false
+                
+                //Then, show assigned image for the player to remember
+                sender.setImage(imgs[sender.tag], for: .normal)
+                sender.backgroundColor = nil
+                
+                //After a delay, continue the game
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 , execute: {
+                    
+                    //The state of the cards that have not been paired will reset
+                    for card in self.gameCards {
+                        if (!self.easyPairs[card.tag]) {
+                            card.isUserInteractionEnabled = true
+                            card.setImage(nil, for: .normal)
+                            card.backgroundColor = #colorLiteral(red: 0.8213501573, green: 0.5678955913, blue: 0.4694665074, alpha: 1)
+                        }
+                    }
+                    
+                    self.returnBtn.isUserInteractionEnabled = true
+                    
+                })
                 
             }
             

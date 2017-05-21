@@ -44,8 +44,11 @@
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z0D-SD-qiN"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-Vw-G3w">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-Vw-G3w">
                                 <rect key="frame" x="100" y="353" width="175" height="50"/>
                                 <color key="backgroundColor" red="0.54649323390000004" green="0.60620500389999998" blue="0.78534031419999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -56,6 +59,9 @@
                                 <state key="normal" title="Resume Game">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="resumeGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYu-j8-ZX0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58691042820729922" green="0.94695510431579322" blue="0.99835759400000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,6 +74,11 @@
                             <constraint firstItem="qmZ-Ug-q01" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zma-HG-MS5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resumeBtn" destination="l2a-Vw-G3w" id="Ex7-sE-Cy7"/>
+                        <segue destination="igL-rA-tDF" kind="modal" identifier="menuToDIffScreen" modalTransitionStyle="crossDissolve" id="77L-ud-o2I"/>
+                        <segue destination="MqD-Em-lDQ" kind="modal" identifier="resumeEasy" modalTransitionStyle="crossDissolve" id="iUO-AA-1hZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -330,5 +341,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VQt-7L-jyt"/>
+        <segue reference="iUO-AA-1hZ"/>
     </inferredMetricsTieBreakers>
 </document>
