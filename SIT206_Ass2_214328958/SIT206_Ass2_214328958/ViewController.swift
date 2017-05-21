@@ -18,6 +18,36 @@ var resumeTime = 0.0
 var resumeCards = [Int]()
 var resumePairs = [Bool]()
 
+//Saved scores
+
+//Easy
+var easyFirstGame = true
+var easyBestTime = 0.0
+var easyBestName = ""
+var easyPreviousTime = 0.0
+var easyPreviousName = ""
+
+//Medium
+var medFirstGame = true
+var medBestTime = 0.0
+var medBestName = ""
+var medPreviousTime = 0.0
+var medPreviousName = ""
+
+//Hard
+var hardFirstGame = true
+var hardBestTime = 0.0
+var hardBestName = ""
+var hardPreviousTime = 0.0
+var hardPreviousName = ""
+
+//Expert
+var expFirstGame = true
+var expBestTime = 0.0
+var expBestName = ""
+var expPreviousTime = 0.0
+var expPreviousName = ""
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var resumeBtn: UIButton!
@@ -46,11 +76,29 @@ class ViewController: UIViewController {
         //If there isn't an ongoing game
         if (!ongoingGame) {
             //Proceed to 'Difficulty Selection' Screen
-            performSegue(withIdentifier: "menuToDIffScreen", sender: self)
+            performSegue(withIdentifier: "menuToDiffScreen", sender: self)
         }
         //If there is an ongoing game
         else {
             
+            let alertController = UIAlertController(title: "New game", message: nil, preferredStyle: .alert)
+            
+            alertController.message = "There is an ongoing game. Start a new game anyway?"
+            
+            let yesAction = UIAlertAction(title: "Yes", style: .default) { (ACTION) in
+                
+                //Reset current game state to default
+                ongoingGame = false
+                difficulty = 0
+                
+                //Proceed to 'Difficulty Selection' Screen
+                self.performSegue(withIdentifier: "menuToDiffScreen", sender: self)
+            }
+            let noAction = UIAlertAction(title: "No", style: .default)
+            
+            alertController.addAction(yesAction)
+            alertController.addAction(noAction)
+            self.present(alertController, animated: true, completion: nil)
         }
         
     }

@@ -13,6 +13,8 @@ class EasyGameViewController: UIViewController {
     @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet var gameCards: [UIButton]!
     @IBOutlet weak var returnBtn: UIButton!
+    @IBOutlet weak var bestTimeLbl: UILabel!
+    @IBOutlet weak var prevTimeLbl: UILabel!
     
     var time = 0.0
     //Timer for the game
@@ -46,8 +48,12 @@ class EasyGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Set initial scoreboard
+        bestTimeLbl.text = "Best Time: (" + easyBestName + ") " + String(easyBestTime)
+        prevTimeLbl.text = "Prev. Time: (" + easyPreviousName + ") " + String(easyPreviousTime)
+        
+        //Initial setup based on if it's a new game or ongoing one
         if (!ongoingGame) {
-            //Initial setup
             startGame()
         }
         else {
@@ -103,7 +109,7 @@ class EasyGameViewController: UIViewController {
         }
         
         //Set and start the timer
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
         
     }
     
@@ -147,19 +153,72 @@ class EasyGameViewController: UIViewController {
         }
         
         //Set and start the timer
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(EasyGameViewController.updateTimer), userInfo: nil, repeats: true)
         
     }
     
     //Updates the time while the game is ongoing
     func updateTimer() {
-        time += 0.1
+        time += 1
         timerLbl.text = "Time: " + String(time)
     }
     
     //Actions after the game finishes
     func finishGame() {
+        
+        //Stop the timer
         timer.invalidate()
+        
+        let alertController = UIAlertController(title: "Game Finished!", message: nil, preferredStyle: .alert)
+        let results = String(time)
+        
+        alertController.message = "Your time was " + results + " seconds. Please enter your name."
+        
+        let yesAction = UIAlertAction(title: "OK", style: .default) { (ACTION) in
+            
+            //Reset current game state to default
+            ongoingGame = false
+            difficulty = 0
+            
+            //Get score from textfield score
+            let textField = alertController.textFields![0]
+            
+            //Update previous scores for 'Easy'
+            easyPreviousTime = self.time
+            easyPreviousName = textField.text!
+            
+            //If this is after the first game for 'Easy'
+            if (!easyFirstGame) {
+                //Check if the current score is similar or better then the best score for 'Easy'
+                if (self.time <= easyBestTime) {
+                    //Update best scores for 'Easy'
+                    easyBestName = textField.text!
+                    easyBestTime = self.time
+                }
+            }
+            else {
+                //Update best scores for 'Easy'
+                easyBestName = textField.text!
+                easyBestTime = self.time
+                easyFirstGame = false
+            }
+            
+            //Proceed to 'Difficulty Selection' Screen
+            self.performSegue(withIdentifier: "easyToMenu", sender: self)
+        }
+        
+        //Add a text field to the alert
+        alertController.addTextField { (textField: UITextField) in
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.placeholder = "Type something here"
+            textField.clearButtonMode = .whileEditing
+        }
+        
+        //add the actions
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     //Main game
@@ -214,7 +273,7 @@ class EasyGameViewController: UIViewController {
                 sender.backgroundColor = nil
                 
                 //After a delay, continue the game
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 , execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
                     
                     //The state of the cards that have not been paired will reset
                     for card in self.gameCards {
